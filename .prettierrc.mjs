@@ -1,8 +1,9 @@
 /** @type {import("prettier").Config} */
 export default {
   printWidth: 120,
+  bracketSameLine: true,
   singleAttributePerLine: true,
-  plugins: ["prettier-plugin-astro"],
+  plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
   overrides: [
     {
       files: "*.astro",
