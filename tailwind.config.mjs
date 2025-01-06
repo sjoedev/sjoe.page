@@ -5,6 +5,7 @@ export default {
     fontFamily: {
       sans: ["Prompt", "system-ui", "sans-serif"],
       display: ["Jost", "system-ui", "sans-serif"],
+      mono: ["Inconsolata", "monospace"],
     },
     extend: {},
   },
