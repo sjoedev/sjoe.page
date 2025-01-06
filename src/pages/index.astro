@@ -21,49 +21,25 @@
     />
     <title>Joe Sturm</title>
   </head>
-  <body class="bg-gray-50 pb-8">
-    <div class="mb-10 bg-gray-900 py-2">
-      <div class="__box__ flex items-baseline justify-between">
-        <a
-          class="font-medium text-amber-400 underline"
-          href="#">
-          &lt;- More
-        </a>
-
-        <div class="__box__ font-medium text-gray-200">January 2025</div>
-
-        <a
-          class="font-medium text-amber-400 underline"
-          href="#">
-          sjoe.page
-        </a>
-      </div>
+  <body>
+    <div class="header-wrapper">
+      <header class="container">
+        <a href="#">&lt;&mdash; More</a>
+        <div class="pub-date">Jan 2025</div>
+        <a href="#">sjoe.page</a>
+      </header>
     </div>
 
-    <header class="__box__ mb-8">
-      <h1
-        class="font-display w-3/4 text-balance text-4xl font-black leading-[120%] text-gray-900 sm:text-5xl sm:leading-[120%]">
-        The Hidden Cost of Cheap
-      </h1>
-    </header>
+    <main class="container">
+      <article>
+        <h1>Some Kinda Title</h1>
 
-    <main class="__box__">
-      <article class="__post__">
         <h2>Section #1</h2>
 
         <p>
           Here is a bunch of text to see what different fonts, font sizes, and line heights look like on the page. We're
           gonna add a bunch of words here for no reason other than making the paragraph wrap on the screen.
         </p>
-
-        <div
-          class="font-mono -mx-4 mt-6 overflow-x-auto text-nowrap bg-gray-200 px-4 py-4 text-sm font-bold sm:mx-0 sm:px-4">
-          <div>public class Main &lbrace;</div>
-          <div>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(final String... args) &lbrace;</div>
-          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hey");</div>
-          <div>&nbsp;&nbsp;&nbsp;&nbsp;&rbrace;</div>
-          <div>&rbrace;</div>
-        </div>
 
         <p>
           Here is a bunch of text to see what different fonts, font sizes, and line heights look like on the page. We're
@@ -76,25 +52,125 @@
           Here is a bunch of text to see what different fonts, font sizes, and line heights look like on the page. We're
           gonna add a bunch of words here for no reason other than making the paragraph wrap on the screen.
         </p>
+
+        <h2>Section #3</h2>
+
+        <p>
+          Here is a bunch of text to see what different fonts, font sizes, and line heights look like on the page. We're
+          gonna add a bunch of words here for no reason other than making the paragraph wrap on the screen.
+        </p>
+
+        <p>
+          Here is a bunch of text to see what different fonts, font sizes, and line heights look like on the page. We're
+          gonna add a bunch of words here for no reason other than making the paragraph wrap on the screen.
+        </p>
       </article>
     </main>
   </body>
 </html>
 
-<style>
-  .__post__ > h2 {
-    @apply font-display mt-8 text-2xl font-bold leading-[128%] text-gray-900 sm:text-3xl sm:leading-[128%];
+<style is:global>
+  :root {
+    --header-font: "Jost", system-ui, sans-serif;
+    --body-font: "Prompt", system-ui, sans-serif;
+
+    /* --step--2: clamp(0.7813rem, 0.7932rem + -0.0154vw, 0.7901rem);
+    --step--1: clamp(0.8889rem, 0.872rem + 0.0845vw, 0.9375rem); */
+    --step-0: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+    /* --step-1: clamp(1.125rem, 1.0467rem + 0.3913vw, 1.35rem);
+    --step-2: clamp(1.2656rem, 1.1424rem + 0.6163vw, 1.62rem);
+    --step-3: clamp(1.4238rem, 1.2429rem + 0.9046vw, 1.944rem); */
+    --step-4: clamp(1.6018rem, 1.3475rem + 1.2713vw, 2.3328rem);
+    --step-5: clamp(1.802rem, 1.4551rem + 1.7345vw, 2.7994rem);
+
+    /* --space-3xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
+    --space-2xs: clamp(0.5rem, 0.4783rem + 0.1087vw, 0.5625rem);
+    --space-xs: clamp(0.75rem, 0.7065rem + 0.2174vw, 0.875rem); */
+    --space-s: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+    --space-m: clamp(1.5rem, 1.4348rem + 0.3261vw, 1.6875rem);
+    --space-l: clamp(2rem, 1.913rem + 0.4348vw, 2.25rem);
+    /* --space-xl: clamp(3rem, 2.8696rem + 0.6522vw, 3.375rem);
+    --space-2xl: clamp(4rem, 3.8261rem + 0.8696vw, 4.5rem);
+    --space-3xl: clamp(6rem, 5.7391rem + 1.3043vw, 6.75rem); */
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  a {
+    color: unset;
+    text-decoration: unset;
+    display: block;
+    width: fit-content;
+  }
+
+  body {
+    font-family: var(--body-font);
+  }
+
+  .header-wrapper {
+    margin-bottom: var(--space-l);
+    background-color: black;
+    color: #facc15;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.5rem;
+    font-weight: 500;
+  }
+
+  header a {
+    text-decoration: underline;
+  }
+
+  .pub-date {
+    font-style: italic;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--header-font);
+    font-size: 1rem;
+    font-weight: 400;
+    text-wrap: balance;
+  }
+
+  h1 {
+    margin-bottom: var(--space-l);
+    font-size: var(--step-5);
+    font-style: italic;
+    font-weight: 900;
+    line-height: 1.25;
+  }
+
+  h2 {
+    margin-top: var(--space-l);
+    margin-bottom: var(--space-m);
+    font-size: var(--step-4);
+    font-weight: 700;
+    line-height: 1.25;
   }
 
   p {
-    @apply text-gray-700 sm:text-lg;
+    margin-bottom: var(--space-s);
+    font-size: var(--step-0);
+    line-height: 1.5;
+    color: #333;
   }
 
-  .__box__ {
-    @apply mx-auto max-w-2xl px-4 sm:px-8;
-  }
-
-  .__post__ > p {
-    @apply mt-6;
+  .container {
+    padding: 0 var(--space-s);
+    margin: 0 auto;
+    max-width: 720px;
   }
 </style>
